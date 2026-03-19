@@ -4,14 +4,13 @@ on:
   schedule:
     - cron: '0 8 */5 * *'  # UTC 1:00，每5天运行
   workflow_dispatch:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
 
 jobs:
   auto-login:
     runs-on: ubuntu-latest
     timeout-minutes: 15
-    
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     
     steps:
       - name: 检出代码
